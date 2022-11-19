@@ -54,6 +54,36 @@ class LtfmLoginView extends StatefulWidget {
                 ),
                 onPressed: () => controller.doLogin(),
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              QTextField(
+                value: "syamsul@gmail.com",
+                label: "Email",
+                hint: "Your email",
+                onChanged: (value) {},
+              ),
+              const SizedBox(
+                height: 29.0,
+              ),
+              QTextField(
+                value: "123456",
+                label: "Password",
+                hint: "Your password",
+                obscure: true,
+                onChanged: (value) {},
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.login),
+                label: const Text("Login"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                ),
+                onPressed: () => controller.doLogin(),
+              ),
             ],
           ),
         ),

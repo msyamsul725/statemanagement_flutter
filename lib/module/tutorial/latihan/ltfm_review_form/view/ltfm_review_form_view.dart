@@ -51,7 +51,7 @@ class LtfmReviewFormView extends StatefulWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            children: const [
+            children: [
               //! 1. Buat sebuah textarea "Review"
               //! 2. Tambahkan ratingbar setelah textarea review, gunakan kode ini:
               /*
@@ -75,6 +75,37 @@ class LtfmReviewFormView extends StatefulWidget {
               /*
               Navigator.pop(context);
               */
+
+              QMemoField(
+                label: "Review",
+                onChanged: (value) {},
+              ),
+              RatingBar.builder(
+                initialRating: 2.0,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemSize: 28.0,
+                itemBuilder: (context, _) => const Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                onRatingUpdate: (rating) {},
+              ),
+              const SizedBox(
+                height: 30.0,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                  controller.setState(() {});
+                },
+                child: const Text("Review"),
+              ),
             ],
           ),
         ),

@@ -32,7 +32,7 @@ class _QMemoFieldState extends State<QMemoField> {
       initialValue: widget.value,
       validator: widget.validator,
       maxLength: 200,
-      maxLines: 6,
+      maxLines: 15,
       decoration: InputDecoration(
         labelText: widget.label,
         labelStyle: const TextStyle(

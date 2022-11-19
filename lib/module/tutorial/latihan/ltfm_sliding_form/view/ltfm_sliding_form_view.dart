@@ -28,22 +28,36 @@ class LtfmSlidingFormView extends StatefulWidget {
                 child: Container(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         "Apply Leave",
                         style: TextStyle(
                           fontSize: 14.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      QDatePicker(label: "Leave Data", onChanged: (value) {}),
                       //! 1. buat datepicker, atur label-nya menjadi
                       //? "Leave Date"
-
+                      QMemoField(label: "Reason", onChanged: (value) {}),
                       //! 2. Buat textarea, atur label-nya menjadi
                       //? "Reason"
-
+                      const Divider(),
                       //! 3. Tambahkan Divider
-
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 40,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blueGrey,
+                          ),
+                          onPressed: () {
+                            controller.submitted = !controller.submitted;
+                            controller.update();
+                          },
+                          child: const Text("Save"),
+                        ),
+                      ),
                       //! 4. Buat sebuah tombol:
                       //? width: MediaQuery.of(context).size.width,
                       //? height: 40
